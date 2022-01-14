@@ -36,7 +36,7 @@
       <div class="projects mt-5 pt-3">
         <h1 class="mt-4 d-block">Summary</h1>
         <div class="row mt-4">
-          <div class="col-md-4">
+          <div class="col-md-3 mb-2">
             <b-card title="⚽ SportsERP">
               <div class="card-body p-0">
                 <p>
@@ -54,7 +54,7 @@
               </div>
             </b-card>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3 mb-2">
             <b-card title="👨🏻‍💻 Freelancer">
               <div class="card-body p-0">
                 <p>
@@ -77,7 +77,7 @@
       <div class="digitalgarden mt-5 pt-3">
         <h1 class="mt-4 d-block">Digital Garden</h1>
         <div class="row mt-4">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <b-card title="📦 Selectable Date Picker">
               <div class="card-body p-0">
                 <p>
