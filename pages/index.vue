@@ -13,18 +13,20 @@
           class="desc mt-2 col-md-8 p-0"
           style="font-size: 1.8rem; font-weight: light"
         >
-          Back-end developer at Path but besides, he is proficient in modern
+          Back-end developer(PHP/Symfony) at Path but besides, he is proficient in modern
           javascript technologies such as Vue.js.
         </div>
 
         <div class="d-flex justify-content-start mt-3 h5 fw-normal">
           <a
             href="https://twitter.com/furkansahins34"
+            target="_blank"
             class="text-dark text-border text-decoration-underline"
             >Twitter</a
           >
           <a
             href="https://github.com/swoorr"
+            target="_blank"
             class="ml-2 text-dark text-border text-decoration-underline"
             >Github</a
           >
@@ -32,14 +34,61 @@
       </div>
 
       <div class="projects mt-5 pt-3">
-        <h1 class="mt-4 d-block">Projects</h1>
+        <h1 class="mt-4 d-block">Summary</h1>
         <div class="row mt-4">
           <div class="col-md-4">
-            <b-card title="SportsERP">
+            <b-card title="⚽ SportsERP">
               <div class="card-body p-0">
                 <p>
                   SportsERP is a web application for managing sports teams. It
                   is developing using Symfony/PHP and with many technologies.
+                  <br />
+                  <b class="fw-bold d-block mt-2 mb-n4 fw-new">
+                    {{
+                      (get_time_difference(new Date("2021-01-01"), new Date())
+                        .days / 30).toFixed(2)
+                    }}
+                    Month
+                  </b>
+                </p>
+              </div>
+            </b-card>
+          </div>
+          <div class="col-md-4">
+            <b-card title="👨🏻‍💻 Freelancer">
+              <div class="card-body p-0">
+                <p>
+                  With PHP, AngularJS, Vue.js, Laravel, Codeigniter, Javascript technologies <br>
+                  <br />
+                  <b class="fw-bold d-block mt-2 mb-n4 fw-new">
+                    {{
+                      (get_time_difference(new Date("2017-01-01"), new Date("2021-01-01"))
+                        .days / 30 / 12).toFixed(2)
+                    }}
+                    Year
+                  </b>
+                </p>
+              </div>
+            </b-card>
+          </div>
+        </div>
+      </div>
+
+      <div class="digitalgarden mt-5 pt-3">
+        <h1 class="mt-4 d-block">Digital Garden</h1>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <b-card title="📦 Selectable Date Picker">
+              <div class="card-body p-0">
+                <p>
+                  Selectable Date Picker is a simple date picker component.
+                  It is developed using Vue.js.
+                  <a
+                    href="https://www.npmjs.com/package/@swoorr/vue-selectable-datepicker"
+                    target="_blank"
+                    >@swoorr/vue-selectable-datepicker</a
+                  >
+                  <br />
                 </p>
               </div>
             </b-card>
@@ -53,10 +102,67 @@
 <script>
 export default {
   name: "IndexPage",
+  methods: {
+    get_time_difference(earlierDate, laterDate) {
+      var oDiff = new Object();
+
+      //  Calculate Differences
+      //  -------------------------------------------------------------------  //
+      var nTotalDiff = laterDate.getTime() - earlierDate.getTime();
+
+      oDiff.days = Math.floor(nTotalDiff / 1000 / 60 / 60 / 24);
+      nTotalDiff -= oDiff.days * 1000 * 60 * 60 * 24;
+
+      oDiff.hours = Math.floor(nTotalDiff / 1000 / 60 / 60);
+      nTotalDiff -= oDiff.hours * 1000 * 60 * 60;
+
+      oDiff.minutes = Math.floor(nTotalDiff / 1000 / 60);
+      nTotalDiff -= oDiff.minutes * 1000 * 60;
+
+      oDiff.seconds = Math.floor(nTotalDiff / 1000);
+      //  -------------------------------------------------------------------  //
+
+      //  Format Duration
+      //  -------------------------------------------------------------------  //
+      //  Format Hours
+      var hourtext = "00";
+      if (oDiff.days > 0) {
+        hourtext = String(oDiff.days);
+      }
+      if (hourtext.length == 1) {
+        hourtext = "0" + hourtext;
+      }
+
+      //  Format Minutes
+      var mintext = "00";
+      if (oDiff.minutes > 0) {
+        mintext = String(oDiff.minutes);
+      }
+      if (mintext.length == 1) {
+        mintext = "0" + mintext;
+      }
+
+      //  Format Seconds
+      var sectext = "00";
+      if (oDiff.seconds > 0) {
+        sectext = String(oDiff.seconds);
+      }
+      if (sectext.length == 1) {
+        sectext = "0" + sectext;
+      }
+
+      //  Set Duration
+      var sDuration = hourtext + ":" + mintext + ":" + sectext;
+      oDiff.duration = sDuration;
+      //  -------------------------------------------------------------------  //
+
+      return oDiff;
+    },
+  },
 };
 </script>
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One:ital,wght@0,300;0,400;0,500;1,300;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,300;1,400;1,700&display=swap");
 html,
 body {
@@ -68,5 +174,8 @@ body {
 }
 .text-decoration-underline:hover {
   text-decoration: none;
+}
+.fw-new {
+  font-family: "Mochiy Pop P One", sans-serif;
 }
 </style>
