@@ -13,8 +13,9 @@
           class="desc mt-2 col-md-8 p-0"
           style="font-size: 1.8rem; font-weight: light"
         >
-          Back-end developer(PHP/Symfony) at Path but besides, he is proficient in modern
-          javascript technologies such as Vue.js.
+          Software developer(PHP/Symfony, Laravel and Javascript/Express) but
+          besides, he is proficient in modern javascript technologies such as
+          Vue.js.
         </div>
 
         <div class="d-flex justify-content-start mt-3 h5 fw-normal">
@@ -36,7 +37,7 @@
       <div class="projects mt-5 pt-3">
         <h1 class="mt-4 d-block">Summary</h1>
         <div class="row mt-4">
-          <div class="col-md-3 mb-2">
+          <div class="col-md-4 mb-2">
             <b-card title="⚽ SportsERP">
               <div class="card-body p-0">
                 <p>
@@ -45,8 +46,10 @@
                   <br />
                   <b class="fw-bold d-block mt-2 mb-n4 fw-new">
                     {{
-                      (get_time_difference(new Date("2021-01-01"), new Date())
-                        .days / 30).toFixed(2)
+                      (
+                        get_time_difference(new Date("2021-01-01"), new Date())
+                          .days / 30
+                      ).toFixed(2)
                     }}
                     Month
                   </b>
@@ -54,16 +57,23 @@
               </div>
             </b-card>
           </div>
-          <div class="col-md-3 mb-2">
+          <div class="col-md-4 mb-2">
             <b-card title="👨🏻‍💻 Freelancer">
               <div class="card-body p-0">
                 <p>
-                  With PHP, AngularJS, Vue.js, Laravel, Codeigniter, Javascript technologies <br>
+                  With PHP, AngularJS, Vue.js, Laravel, Codeigniter, Javascript
+                  technologies <br />
                   <br />
                   <b class="fw-bold d-block mt-2 mb-n4 fw-new">
                     {{
-                      (get_time_difference(new Date("2017-01-01"), new Date("2021-01-01"))
-                        .days / 30 / 12).toFixed(2)
+                      (
+                        get_time_difference(
+                          new Date("2017-01-01"),
+                          new Date("2021-01-01")
+                        ).days /
+                        30 /
+                        12
+                      ).toFixed(2)
                     }}
                     Year
                   </b>
@@ -77,19 +87,19 @@
       <div class="digitalgarden mt-5 pt-3">
         <h1 class="mt-4 d-block">Digital Garden</h1>
         <div class="row mt-4">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <b-card title="📦 Selectable Date Picker">
               <div class="card-body p-0">
-                <p>
-                  Selectable Date Picker is a simple date picker component.
-                  It is developed using Vue.js.
-                  <a
-                    href="https://www.npmjs.com/package/@swoorr/vue-selectable-datepicker"
-                    target="_blank"
-                    >@swoorr/vue-selectable-datepicker</a
-                  >
-                  <br />
+                <p class="mb-2">
+                  Selectable Date Picker is a simple date picker component. It
+                  is developed using Vue.js.
                 </p>
+                <span class="badge badge-success" style="font-family:sans-serif;">development</span>
+                <a
+                  href="https://www.npmjs.com/package/@swoorr/vue-selectable-datepicker"
+                  target="_blank"
+                  >@swoorr/vue-selectable-datepicker</a
+                >
               </div>
             </b-card>
           </div>
