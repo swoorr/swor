@@ -23,13 +23,19 @@
             href="https://twitter.com/furkansahins34"
             target="_blank"
             class="text-dark text-border text-decoration-underline"
-            >Twitter</a
+            >tweets</a
           >
           <a
             href="https://github.com/swoorr"
             target="_blank"
             class="ml-2 text-dark text-border text-decoration-underline"
-            >Github</a
+            >git</a
+          >
+          <a
+            href="https://www.buymeacoffee.com/swor"
+            target="_blank"
+            class="ml-2 text-dark text-border text-decoration-underline"
+            >buymeacoffee</a
           >
         </div>
       </div>
