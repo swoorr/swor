@@ -20,9 +20,15 @@
 
         <div class="d-flex justify-content-start mt-3 h5 fw-normal">
           <a
-            href="https://twitter.com/furkansahins34"
+            href="https://superpeer.com/furkansahins34"
             target="_blank"
             class="text-dark text-border text-decoration-underline"
+            >call</a
+          >
+          <a
+            href="https://twitter.com/furkansahins34"
+            target="_blank"
+            class="ml-2 text-dark text-border text-decoration-underline"
             >tweets</a
           >
           <a
@@ -100,7 +106,11 @@
                   Selectable Date Picker is a simple date picker component. It
                   is developed using Vue.js.
                 </p>
-                <span class="badge badge-success" style="font-family:sans-serif;">development</span>
+                <span
+                  class="badge badge-success"
+                  style="font-family: sans-serif"
+                  >development</span
+                >
                 <a
                   href="https://www.npmjs.com/package/@swoorr/vue-selectable-datepicker"
                   target="_blank"
@@ -111,6 +121,27 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://widgets.superpeer.com/widget.css"
+      />
+      <script src="https://widgets.superpeer.com/widget.js"></script>
+      <script>
+        window.addEventListener("load", () => {
+          new Superpeer.Widget({
+            embed: { type: "popup" },
+            launcher: { type: "profile-avatar", options: {} },
+            config: {
+              username: "furkansahins34",
+              serviceSlug: "getting-to-know",
+            },
+          });
+        });
+      </script>
     </div>
   </div>
 </template>
