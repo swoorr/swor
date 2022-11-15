@@ -50,7 +50,10 @@
         <h1 class="mt-4 d-block">Summary (Total 7+ year)</h1>
         <div class="row mt-4">
           <div class="col-md-4 mb-2">
-            <b-card title="⚽ SportsERP">
+            <b-card>
+              <b-card-title
+                ><b-link to="/sportserp">⚽ SportsERP</b-link></b-card-title
+              >
               <div class="card-body p-0">
                 <p>
                   SportsERP is a web application for managing sports teams. It
@@ -124,11 +127,6 @@
     </div>
 
     <div>
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://widgets.superpeer.com/widget.css"
-      />
       <script src="https://widgets.superpeer.com/widget.js"></script>
       <script>
         window.addEventListener("load", () => {
@@ -147,82 +145,9 @@
 </template>
 
 <script>
+import mixins from "~/mixins";
 export default {
   name: "IndexPage",
-  methods: {
-    get_time_difference(earlierDate, laterDate) {
-      var oDiff = new Object();
-
-      //  Calculate Differences
-      //  -------------------------------------------------------------------  //
-      var nTotalDiff = laterDate.getTime() - earlierDate.getTime();
-
-      oDiff.days = Math.floor(nTotalDiff / 1000 / 60 / 60 / 24);
-      nTotalDiff -= oDiff.days * 1000 * 60 * 60 * 24;
-
-      oDiff.hours = Math.floor(nTotalDiff / 1000 / 60 / 60);
-      nTotalDiff -= oDiff.hours * 1000 * 60 * 60;
-
-      oDiff.minutes = Math.floor(nTotalDiff / 1000 / 60);
-      nTotalDiff -= oDiff.minutes * 1000 * 60;
-
-      oDiff.seconds = Math.floor(nTotalDiff / 1000);
-      //  -------------------------------------------------------------------  //
-
-      //  Format Duration
-      //  -------------------------------------------------------------------  //
-      //  Format Hours
-      var hourtext = "00";
-      if (oDiff.days > 0) {
-        hourtext = String(oDiff.days);
-      }
-      if (hourtext.length == 1) {
-        hourtext = "0" + hourtext;
-      }
-
-      //  Format Minutes
-      var mintext = "00";
-      if (oDiff.minutes > 0) {
-        mintext = String(oDiff.minutes);
-      }
-      if (mintext.length == 1) {
-        mintext = "0" + mintext;
-      }
-
-      //  Format Seconds
-      var sectext = "00";
-      if (oDiff.seconds > 0) {
-        sectext = String(oDiff.seconds);
-      }
-      if (sectext.length == 1) {
-        sectext = "0" + sectext;
-      }
-
-      //  Set Duration
-      var sDuration = hourtext + ":" + mintext + ":" + sectext;
-      oDiff.duration = sDuration;
-      //  -------------------------------------------------------------------  //
-
-      return oDiff;
-    },
-  },
+  mixins: [mixins],
 };
 </script>
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One:ital,wght@0,300;0,400;0,500;1,300;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;1,300;1,400;1,700&display=swap");
-html,
-body {
-  font-family: "Zilla Slab", serif;
-  color: #444;
-}
-.text-decoration-underline {
-  text-decoration: underline;
-}
-.text-decoration-underline:hover {
-  text-decoration: none;
-}
-.fw-new {
-  font-family: "Mochiy Pop P One", sans-serif;
-}
-</style>
