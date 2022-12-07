@@ -1,27 +1,27 @@
 <template>
   <div class="container-fluid">
-    <div class="p-md-5">
+    <div class="p-3 p-md-5">
       <div class="header mt-1">
         <div class="title display-4 mt-2 d-block fw-bold" style="font-weight: 600">Furkan Sahin 🧬</div>
-        <div class="desc mt-2 col-md-8 p-0" style="font-size: 1.8rem; font-weight: light">
+        <div class="desc mt-2 col-md-8 p-0 fs-4 fs-md-2" style=" font-weight: light">
           Software developer (PHP/Symfony, Laravel and Javascript/Express) but besides, he is proficient in modern javascript technologies
           such as Vuejs, Reactjs.
         </div>
 
-        <div class="d-flex justify-content-start mt-3 h5 fw-normal">
-          <el-button type="primary" plain onClick=" window.open('https://superpeer.com/furkansahins34');">
+        <div class="my-3">
+          <el-button type="primary" plain class="mb-2 ms-0 me-2" onClick=" window.open('https://superpeer.com/furkansahins34');">
             <i class="el-icon-share"></i>
             call</el-button
           >
-          <el-button type="warning" plain onClick=" window.open('https://twitter.com/furkansahins34');">
+          <el-button type="warning" plain class="mb-2 ms-0 me-2" onClick=" window.open('https://twitter.com/furkansahins34');">
             <i class="el-icon-postcard"></i>
             tweets</el-button
           >
-          <el-button type="info" plain onClick=" window.open('https://github.com/swoorr');">
+          <el-button type="info" plain class="mb-2 ms-0 me-2" onClick=" window.open('https://github.com/swoorr');">
             <i class="el-icon-finished"></i>
             github</el-button
           >
-          <el-button type="dark" plain onClick=" window.open('https://buymeacoffee.com/swor');">
+          <el-button type="dark" plain class="mb-2 ms-0" onClick=" window.open('https://buymeacoffee.com/swor');">
             <i class="el-icon-coffee-cup"></i>
             coffee</el-button
           >
