@@ -1,3 +1,5 @@
+import { IconsPlugin } from "bootstrap-vue";
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -5,17 +7,25 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+
+  bootstrapVue: {
+    icons: false,
+    bootstrapCSS: false
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Furkan Sahin, Personal Web Page',
+    title: 'Furkan Sahin, Full Stack Developer (PHP, Laravel, Symfony, Vuejs, Reactjs)',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Furkan Şahin, Istanbul. Full Stack Developer. PHP, Laravel, Symfony and Javascript Vuejs, Reactjs' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'shortcut icon', type: 'image/jpeg', href: '/site.jpeg' }
+      { rel: 'shortcut icon', type: 'image/jpeg', href: '/site.jpeg' },
+      // add bootstrap 5 css
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css' },
     ]
   },
 
@@ -59,12 +69,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    bootstrapVue: {
-      icons: false
-    }
-  },
-
-  bootstrapVue: {
-    icons: false
+    babel: {
+      compact: true,
+    },
   }
 };

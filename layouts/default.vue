@@ -1,10 +1,5 @@
 <template>
   <div>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://widgets.superpeer.com/widget.css"
-    />
     <Nuxt />
   </div>
 </template>
