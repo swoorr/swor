@@ -31,45 +31,24 @@
       <div class="projects mt-2 pt-3">
         <h1 class="mt-4 d-block">Summary (Total 7+ year)</h1>
         <div class="row mt-4">
-          <div class="col-md-4 mb-2">
+          <div v-for="n in jobs" class="col-md-4 mb-2">
             <el-card shadow="always">
               <div slot="header" class="clearfix" style="cursor: pointer">
                 <b-link
-                  to="/sportserp"
+                  :to="`/job/${n.id}`"
                   onmouseover="this.style.color='orange';"
                   onmouseout="this.style.color='#333';"
                   style="color: #333; text-decoration: none"
-                  >⚽ SportsERP</b-link
+                  >{{n.title}}</b-link
                 >
                 <div class="float-end">
                   <b class="fw-bold d-block">
-                    {{ (get_time_difference(new Date("2021-01-01"), new Date()).days / 30).toFixed(2) }}
-                    Month
-                  </b>
-                </div>
-              </div>
-              <p>
-                SportsERP is a web application for managing sports teams. It is developing using Symfony/PHP and with many technologies.
-              </p>
-            </el-card>
-          </div>
-          <div class="col-md-4 mb-2">
-            <el-card shadow="always">
-              <div slot="header" class="clearfix" style="cursor: pointer">
-                <b-link
-                  onmouseover="this.style.color='orange';"
-                  onmouseout="this.style.color='#333';"
-                  style="color: #333; text-decoration: none"
-                  >👨🏻‍💻 Freelancer</b-link
-                >
-                <div class="float-end">
-                  <b class="fw-bold d-block">
-                    {{ (get_time_difference(new Date("2017-01-01"), new Date("2021-01-01")).days / 30 / 12).toFixed(2) }}
+                    {{ (get_time_difference(new Date(n.start_date), (n.end_date != '-' ? new Date(n.end_date) : new Date())).days / 30 / 12).toFixed(2) }}
                     Year
                   </b>
                 </div>
               </div>
-              <p>With PHP, AngularJS, Vue.js, Laravel, Codeigniter, Javascript technologies</p>
+              <p v-text="n.description"></p>
             </el-card>
           </div>
         </div>
@@ -105,14 +84,23 @@
 </template>
 
 <script>
-import elementUi from "element-ui"
-import Vue from "vue"
-Vue.use(elementUi)
-//add css
-import "element-ui/lib/theme-chalk/index.css"
 import mixins from "~/mixins"
 export default {
   name: "IndexPage",
   mixins: [mixins],
+  // short data function 
+  data: () => ({
+    // ...
+    jobs:[]
+  }),
+
+
+  beforeMount(){
+    fetch('https://createapi.app/api/app/bf4a0bef-7357-4ac8-ab2d-74b7cb753e97')
+    .then(response => response.json())
+    .then(data => {
+      this.jobs = data.data
+    })
+  }
 }
 </script>
